@@ -1,0 +1,17 @@
+.drop_zone {
+  height: 100%;
+  width: 100%;
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0.2rem solid #bbbbbb;
+  border-style: dashed;
+  border-radius: 1rem;
+}
+
+.hovering {
+  background-color: #0089e10d;
+  border: 0.2rem solid #0089e1;
+}

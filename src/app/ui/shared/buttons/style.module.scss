@@ -1,0 +1,130 @@
+.button_style {
+  border-radius: 0.8rem;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  white-space: nowrap;
+  font-size: 1.4rem;
+  font-weight: 800;
+  padding: 0 2.4rem;
+}
+
+.button_md {
+  height: 4.5rem;
+  border-radius: 0.3rem;
+}
+
+.button_sm {
+  height: 3rem;
+  border-radius: 0.3rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .button_style {
+    font-size: 1.6rem;
+  }
+}
+
+.button_style:disabled,
+.button_style:hover:disabled {
+  background-color: var(--grey01);
+  color: var(--grey02);
+  cursor: not-allowed;
+}
+
+.primary_inverted,
+.warning_inverted {
+  background-color: var(--white);
+  border: 0.1rem solid var(--grey01);
+}
+
+.primary_inverted {
+  color: var(--black);
+}
+
+.warning_inverted {
+  color: var(--orange);
+}
+
+.warning {
+  color: var(--black);
+  background-color: var(--yellow);
+  transition: all 0.3s ease;
+}
+
+.warning:hover {
+  color: var(--white);
+  background-color: var(--black);
+}
+
+.primary {
+  color: var(--black);
+  background-color: var(--grey01);
+}
+
+.danger {
+  color: var(--white);
+  background-color: var(--red);
+}
+
+.danger:hover {
+  color: var(--white);
+  background-color: var(--red01);
+}
+.pass {
+  color: var(--white);
+  background-color: var(--green02);
+  transition: all 0.3s ease;
+}
+
+.pass:hover {
+  color: var(--white);
+  background-color: var(--green03);
+}
+
+.unstyled,
+.unstyled_warning {
+  padding: 0;
+  margin: 0;
+  height: fit-content;
+  display: flex;
+}
+
+.unstyled {
+  justify-content: center;
+}
+
+.unstyled_warning {
+  color: var(--orange);
+}
+
+.unstyledDanger {
+  color: var(--red);
+}
+
+.passOutline {
+  color: var(--green03);
+  background-color: var(--white);
+  transition: all 0.3s ease;
+  border: 0.1rem solid var(--green03);
+}
+
+.passOutline:hover {
+  color: #0D0D0D;
+  background-color: #7DE47A
+}
+
+.dangerOutline {
+  color: var(--red);
+  background-color: var(--white);
+  transition: all 0.3s ease;
+  border: 0.1rem solid var(--red);
+}
+
+.dangerOutline:hover {
+  color: var(--red01);
+  border: 0.1rem solid var(--red01);
+}

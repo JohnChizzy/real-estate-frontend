@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import { Providers } from "./Providers";
+import NextTopLoader from "nextjs-toploader";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const lexendSans = localFont({
+  src: "./fonts/Lexend-VariableFont_wght.ttf",
+  variable: "--font-lexend",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const urbanist = localFont({
+  src: "./fonts/Urbanist-VariableFont_wght.ttf",
+  variable: "--font-urbanist",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,11 +27,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${lexendSans.variable} ${urbanist.variable} antialiased`}
       >
-        {children}
+        <NextTopLoader
+          color="#703BF7"
+          height={4}
+          speed={500}
+          showSpinner={false}
+        />
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

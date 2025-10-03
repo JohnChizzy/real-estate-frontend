@@ -1,0 +1,47 @@
+.switch {
+  height: 3.5rem;
+  border-radius: 4rem;
+  padding: 0.4rem;
+  background-color: var(--grey01);
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.toggled_switch {
+  background-color: var(--black);
+  flex-direction: row-reverse;
+}
+
+.ball {
+  width: 27px;
+  height: 27px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: var(--white);
+  border-radius: 100%;
+  margin-right: 1.058rem;
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggled_ball {
+  margin-left: 1.058rem;
+  margin-right: 0;
+}
+
+.text {
+  margin-left: 3.758rem;
+  margin-right: 0.842rem;
+  font-family: var(--font-bold);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.toggled_text {
+  margin-right: 3.758rem;
+  margin-left: 0.842rem;
+  color: var(--white);
+}

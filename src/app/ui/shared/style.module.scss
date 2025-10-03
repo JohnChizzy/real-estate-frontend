@@ -1,0 +1,105 @@
+.pill {
+  text-transform: uppercase;
+  border-radius: 1.5rem;
+  font-size: 1.2rem;
+  height: 3rem;
+ font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.2rem;
+  white-space: nowrap;
+}
+
+.pill_sm {
+  height: 2.5rem;
+  border-radius: 1.8rem;
+}
+
+.box {
+  font-size: 1.1rem;
+  border-radius: 0.2rem;
+  padding: 0.5rem 0.8rem;
+  font-weight: 700;
+  width: fit-content;
+  text-transform: uppercase;
+}
+
+.curvedBox {
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+  font-weight: 700;
+  width: fit-content;
+  text-transform: uppercase;
+}
+
+.curvedBox.maxtrf {
+  background-color: var(--yellow03); 
+  color: var(--black01);
+}
+
+.pill.maxtrf {
+  background-color: var(--yellow04); 
+  color: var(--black01);
+}
+
+.pill.peach {
+  background-color: #FEFBF6; 
+  color: var(--orange);
+}
+
+.pill.primary {
+  color: var(--black);
+  background-color: var(--grey04);
+  font-weight: 500;
+}
+
+.box.primary {
+  color: var(--grey02);
+  background-color: var(--grey02-opaque);
+}
+
+.box.danger {
+  color: var(--red);
+  background-color: var(--red-opaque);
+}
+
+.box.success {
+  color: var(--green);
+  background-color: var(--green-opaque);
+}
+
+.box.prepaid {
+  color: var(--yellow01);
+  background-color: var(--yellow01-opaque);
+}
+
+.box.warning {
+  color: var(--orange);
+  background-color: var(--orange-opaque);
+}
+
+.box.active {
+  color: var(--blue);
+  background-color: var(--blue-opaque);
+}
+
+.box.closed {
+  color: var(--grey03);
+  background-color: var(--grey03-opaque);
+}
+
+.box.maxtrf {
+  background-color: var(--yellow02); 
+  color: var(--black01);
+}
+
+.box.refunded {
+  color: var(--white);
+  background-color: var(--blue01);
+}
+
+.box.void {
+  color: var(--white);
+  background-color: var(--red01);
+}

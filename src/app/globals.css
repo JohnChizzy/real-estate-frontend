@@ -1,8 +1,50 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/forms";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --black: #3e3e3e;
+  --black01: #3d3d3d;
+  --black-opaque: rgba(62, 62, 62, 0.3);
+  --black-30: rgba(62, 62, 62, 0.3);
+  --black-50: rgba(62, 62, 62, 0.5);
+  --white: #ffffff;
+  --white01: #fafafa;
+  --yellow: #fcdd18;
+  --yellow01: #d6bb0f;
+  --yellow02: #f8e56b;
+  --yellow03: #fcdd18;
+  --yellow04: #fff8ce;
+  --yellow01-opaque: rgba(214, 187, 15, 0.1);
+  --soft-yellow: #fff8ce;
+  --orange: #e88e15;
+  --orange-opaque: rgba(232, 142, 21, 0.1);
+  --red: #e26262;
+  --red-opaque: rgba(226, 98, 98, 0.11);
+  --red01: #d36966;
+  --blue: #45c6dd;
+  --blue-opaque: rgba(69, 198, 221, 0.1);
+  --blue01: #a5d9f4;
+  --green: #31c491;
+  --green02: #1e7e1b;
+  --green03: #1d591b;
+  --green02-80: rgba(30, 126, 27, 0.8);
+  --green-opaque: rgba(49, 196, 145, 0.1);
+  --grey01: #eeeeee;
+  --grey02: #808080;
+  --grey02-opaque: rgba(128, 128, 128, 0.1);
+  --grey03: #2f3431;
+  --grey03-opaque: rgba(47, 52, 49, 0.1);
+  --grey04: #f4f6fa;
+  --grey05: #676767;
+  --grey06: #707070;
+  --grey07: #e4e4e4;
+  --grey08: #f4f6fa;
+  --grey09: #f6f6f6;
+  --grey10: #bfbfbf;
+  --grey11: #8b8b8b;
+  --grey12: #191919;
 }
 
 @theme inline {
@@ -12,6 +54,53 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@theme {
+  --color-black: var(--black);
+  --color-black-opaque: var(--black-opaque);
+  --color-black-50: var(--black-50);
+  --color-black-30: var(--black-30);
+  --color-white01: var(--white01);
+  --color-yellow: var(--yellow);
+  --color-yellow01: var(--yellow01);
+  --color-yellow03: var(--yellow03);
+  --color-yellow01-opaque: var(--yellow01-opaque);
+  --color-soft-yellow: var(--soft-yellow);
+  --color-orange: var(--orange);
+  --color-orange-opaque: var(--orange-opaque);
+  --color-red: var(--red);
+  --color-red01: var(--red01);
+  --color-red-opaque: var(--red-opaque);
+  --color-blue: var(--blue);
+  --color-blue-opaque: var(--blue-opaque);
+  --color-green: var(--green);
+  --color-green02: var(--green02);
+  --color-green03: var(--green03);
+  --color-green-opaque: var(--green-opaque);
+  --color-green02-80: var(--green02-80);
+  --color-grey01: var(--grey01);
+  --color-grey02: var(--grey02);
+  --color-grey02-opaque: var(--grey02-opaque);
+  --color-grey03: var(--grey03);
+  --color-grey03-opaque: var(--grey03-opaque);
+  --color-grey04: var(--grey04);
+  --color-grey05: var(--grey05);
+  --color-grey06: var(--grey06);
+  --color-grey07: var(--grey07);
+  --color-grey08: var(--grey08);
+  --color-grey09: var(--grey09);
+  --color-grey10: var(--grey10);
+  --color-grey11: var(--grey11);
+  --color-grey12: var(--grey12);
+
+  --font-lexend: var(--font-lexend);
+  --font-urbanist: var(--font-urbanist);
+
+  --breakpoint-: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+  --breakpoint-xl: 1440px;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,8 +108,636 @@
   }
 }
 
-body {
+@layer base {
+  html {
+    font-size: 10px;
+    font-weight: normal;
+    scroll-behavior: smooth;
+  }
+
+  *,
+  *:before,
+  *:after {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: var(--font-sans);
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  body {
+    background: #141414;
+    font-family: var(--font-lexend);
+    color: var(--foreground);
+    overflow: auto;
+  }
+}
+
+/* body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+/* Font size and font family */
+.lex-r-8 {
+  font-family: var(--font-lexend);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.lex-r-9 {
+  font-family: var(--font-lexend);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.lex-r-10 {
+  font-family: var(--font-lexend);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.lex-r-11 {
+  font-family: var(--font-lexend);
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.lex-r-12 {
+  font-family: var(--font-lexend);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.lex-r-13 {
+  font-family: var(--font-lexend);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.lex-r-14 {
+  font-family: var(--font-lexend);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.lex-r-15 {
+  font-family: var(--font-lexend);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.lex-r-16 {
+  font-family: var(--font-lexend);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.lex-r-18 {
+  font-family: var(--font-lexend);
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.lex-r-20 {
+  font-family: var(--font-lexend);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.lex-r-22 {
+  font-family: var(--font-lexend);
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+
+.lex-m-8 {
+  font-family: var(--font-lexend);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.lex-m-10 {
+  font-family: var(--font-lexend);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.lex-m-12 {
+  font-family: var(--font-lexend);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.lex-m-13 {
+  font-family: var(--font-lexend);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.lex-m-14 {
+  font-family: var(--font-lexend);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.lex-m-16 {
+  font-family: var(--font-lexend);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.lex-m-18 {
+  font-family: var(--font-lexend);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.lex-m-20 {
+  font-family: var(--font-lexend);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.lex-m-21 {
+  font-family: var(--font-lexend);
+  font-size: 2.1rem;
+  font-weight: 500;
+}
+
+.lex-m-23 {
+  font-family: var(--font-lexend);
+  font-size: 2.3rem;
+  font-weight: 500;
+}
+
+.lex-m-30 {
+  font-family: var(--font-lexend);
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.lex-m-48 {
+  font-family: var(--font-lexend);
+  font-size: 4.8rem;
+  font-weight: 500;
+}
+
+.lex-m-46 {
+  font-family: var(--font-lexend);
+  font-size: 4.6rem;
+  font-weight: 500;
+}
+
+.lex-s-10 {
+  font-family: var(--font-lexend);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.lex-s-12 {
+  font-family: var(--font-lexend);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.lex-s-13 {
+  font-family: var(--font-lexend);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.lex-s-14 {
+  font-family: var(--font-lexend);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.lex-s-15 {
+  font-family: var(--font-lexend);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.lex-s-16 {
+  font-family: var(--font-lexend);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.lex-s-18 {
+  font-family: var(--font-lexend);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.lex-s-20 {
+  font-family: var(--font-lexend);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.lex-s-22 {
+  font-family: var(--font-lexend);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.lex-s-21 {
+  font-family: var(--font-lexend);
+  font-size: 2.1rem;
+  font-weight: 700;
+}
+
+.lex-s-32 {
+  font-family: var(--font-lexend);
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.lex-s-40 {
+  font-family: var(--font-lexend);
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.lex-b-8 {
+  font-family: var(--font-lexend);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.lex-b-10 {
+  font-family: var(--font-lexend);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.lex-b-11 {
+  font-family: var(--font-lexend);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.lex-b-12 {
+  font-family: var(--font-lexend);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.lex-b-13 {
+  font-family: var(--font-lexend);
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.lex-b-14 {
+  font-family: var(--font-lexend);
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.lex-b-16 {
+  font-family: var(--font-lexend);
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.lex-b-18 {
+  font-family: var(--font-lexend);
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.lex-b-20 {
+  font-family: var(--font-lexend);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.lex-b-22 {
+  font-family: var(--font-lexend);
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+.lex-b-24 {
+  font-family: var(--font-lexend);
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+.urb-r-8 {
+  font-family: var(--font-urbanist);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.urb-r-9 {
+  font-family: var(--font-urbanist);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.urb-r-10 {
+  font-family: var(--font-urbanist);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.urb-r-11 {
+  font-family: var(--font-urbanist);
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.urb-r-12 {
+  font-family: var(--font-urbanist);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.urb-r-13 {
+  font-family: var(--font-urbanist);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.urb-r-14 {
+  font-family: var(--font-urbanist);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.urb-r-15 {
+  font-family: var(--font-urbanist);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.urb-r-16 {
+  font-family: var(--font-urbanist);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.urb-r-18 {
+  font-family: var(--font-urbanist);
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.urb-r-20 {
+  font-family: var(--font-urbanist);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.urb-r-22 {
+  font-family: var(--font-urbanist);
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+
+.urb-m-8 {
+  font-family: var(--font-urbanist);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.urb-m-10 {
+  font-family: var(--font-urbanist);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.urb-m-12 {
+  font-family: var(--font-urbanist);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.urb-m-13 {
+  font-family: var(--font-urbanist);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.urb-m-14 {
+  font-family: var(--font-urbanist);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.urb-m-16 {
+  font-family: var(--font-urbanist);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.urb-m-18 {
+  font-family: var(--font-urbanist);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.urb-m-21 {
+  font-family: var(--font-urbanist);
+  font-size: 2.1rem;
+  font-weight: 500;
+}
+
+.urb-m-23 {
+  font-family: var(--font-urbanist);
+  font-size: 2.3rem;
+  font-weight: 500;
+}
+
+.urb-m-30 {
+  font-family: var(--font-urbanist);
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.urb-m-48 {
+  font-family: var(--font-urbanist);
+  font-size: 4.8rem;
+  font-weight: 500;
+}
+
+.urb-m-46 {
+  font-family: var(--font-urbanist);
+  font-size: 4.6rem;
+  font-weight: 500;
+}
+
+.urb-s-10 {
+  font-family: var(--font-urbanist);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.urb-s-12 {
+  font-family: var(--font-urbanist);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.urb-s-13 {
+  font-family: var(--font-urbanist);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.urb-s-14 {
+  font-family: var(--font-urbanist);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.urb-s-15 {
+  font-family: var(--font-urbanist);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.urb-s-16 {
+  font-family: var(--font-urbanist);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.urb-s-18 {
+  font-family: var(--font-urbanist);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.urb-s-20 {
+  font-family: var(--font-urbanist);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.urb-s-22 {
+  font-family: var(--font-urbanist);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.urb-s-21 {
+  font-family: var(--font-urbanist);
+  font-size: 2.1rem;
+  font-weight: 700;
+}
+
+.urb-s-24 {
+  font-family: var(--font-urbanist);
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.urb-s-28 {
+  font-family: var(--font-urbanist);
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.urb-s-32 {
+  font-family: var(--font-urbanist);
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.urb-b-8 {
+  font-family: var(--font-urbanist);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.urb-b-10 {
+  font-family: var(--font-urbanist);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.urb-b-11 {
+  font-family: var(--font-urbanist);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.urb-b-12 {
+  font-family: var(--font-urbanist);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.urb-b-13 {
+  font-family: var(--font-urbanist);
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.urb-b-14 {
+  font-family: var(--font-urbanist);
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.urb-b-16 {
+  font-family: var(--font-urbanist);
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.urb-b-18 {
+  font-family: var(--font-urbanist);
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.urb-b-20 {
+  font-family: var(--font-urbanist);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.urb-b-22 {
+  font-family: var(--font-urbanist);
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.urb-b-24 {
+  font-family: var(--font-urbanist);
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+@layer utilities {
+  .scrollbar-hidden::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
