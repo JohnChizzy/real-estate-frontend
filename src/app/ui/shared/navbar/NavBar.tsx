@@ -1,65 +1,60 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import KanuLogo from "@/app/assets/images/kanu-logo-green.svg";
+import EstateinLogo from "@/app/assets/images/real-estate-logo.svg";
 import { usePathname } from "next/navigation";
-import { useRouter } from "nextjs-toploader/app";
-import Chart from "@/app/assets/images/chart.svg";
-import Developer from "@/app/assets/images/developer-icon.svg";
-import ProjectIcon from "@/app/assets/images/project-icon.svg";
-import ProfileIcon from "@/app/assets/images/profile-icon.svg";
-import UserIcon from "@/app/assets/images/user-icon.svg";
-import LogoutIcon from "@/app/assets/images/logout.svg";
-import ListItem from "@/app/ui/shared/list-items/LisItem";
-import Cookies from "js-cookie";
-import { userKey, loginKey } from "@/app/utils/constants";
-import { decrypt_user0bj } from "@/app/utils/auth-utils";
-import { ucFirst } from "@/app/utils/ui-helpers";
+import CustomButton, { ButtonSize, ButtonStates, ButtonType } from "@/app/ui/shared/buttons/Button";
 
 export default function NavBar() {
   const pathname = usePathname();
-  const router = useRouter();
 
-
-  const ddpTabs = [
-    {
-      title: "Dashboard",
-      icon: Chart,
-      route: "/dashboard",
-    },
-    {
-      title: "Developer",
-      icon: Developer,
-      route: "/developers",
-    },
-    {
-      title: "Project",
-      icon: ProjectIcon,
-      route: "/projects",
-    },
-    {
-      title: "Users",
-      icon: UserIcon,
-      route: "/users",
-    },
-    {
-      title: "Uploads",
-      icon: ProjectIcon,
-      route: "/uploads",
-    },
+  const navLinksList: {
+    title: string;
+    url: string;
+  }[] = [
+    { title: "Home", url: "/" },
+    { title: "About Us", url: "/about-us" },
+    { title: "Properties", url: "/properties" },
+    { title: "Services", url: "/services" },
   ];
 
-  // Logout
-  const logout = () => {
-    Cookies.remove(loginKey);
-    Cookies.remove(userKey);
-    window.location.href = "/login";
-  };
-
   return (
-    <nav className="flex flex-col bg-[#F2F2F2] pt-[5.6rem] pb-[5.58rem] pl-[3rem]">
-
-      
-    </nav>
+    <header className="bg-[#1a1a1a] fixed left-0 top-0 z-10 px-[1.6rem] lg:px-[16.2rem] flex items-center justify-between  py-[2.55rem]  backdrop-blur-sm w-screen">
+      <div>
+        <Link href="/">
+          <Image
+            className=""
+            src={EstateinLogo}
+            alt="Estatein logo"
+            width={0}
+            height={0}
+          />
+        </Link>
+      </div>
+      <nav className="flex items-center gap-x-[1rem] md:gap-x-[2.4rem] lg:gap-x-[3rem]">
+        {navLinksList.map((link) => (
+          <Link
+            key={link.title}
+            className={`${
+              pathname === link.url
+                ? `bg-black02 px-[1.6rem] py-[0.8rem] md:px-[2rem] md:py-[1.4rem] lg:px-[2.4rem] lg:py-[1.6rem] rounded-[0.5rem] md:rounded-[0.8rem] lg:rounded-[1rem]`
+                : ""
+            } font-urbanist font-medium text-[1.2rem] md:text-[1.4rem] lg:text-[1.8rem]`}
+            href={link.url}
+          >
+            {link.title}
+          </Link>
+        ))}
+      </nav>
+      < CustomButton
+        state={ButtonStates.unstyled}
+        size={ButtonSize.md}
+        type={ButtonType.link}
+        url="/contact-us"
+        customStyle="!w-fit !bg-black02 !px-[1.6rem] !py-[0.8rem] md:!px-[2rem] md:!py-[1.4rem] lg:!px-[2.4rem] lg:!py-[1.6rem] font-urbanist !font-medium !text-[1.2rem] md:!text-[1.4rem] lg:!text-[1.8rem] !rounded-[0.5rem] md:!rounded-[0.8rem] lg:!rounded-[1rem] hover:!bg-black01 "
+        >
+        Contact Us
+      </CustomButton>
+    </header>
   );
 }

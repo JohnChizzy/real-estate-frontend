@@ -6,6 +6,7 @@
   --foreground: #171717;
   --black: #3e3e3e;
   --black01: #3d3d3d;
+  --black02: #141414;
   --black-opaque: rgba(62, 62, 62, 0.3);
   --black-30: rgba(62, 62, 62, 0.3);
   --black-50: rgba(62, 62, 62, 0.5);
@@ -56,6 +57,8 @@
 
 @theme {
   --color-black: var(--black);
+  --color-black01: var(--black01);
+  --color-black02: var(--black02);
   --color-black-opaque: var(--black-opaque);
   --color-black-50: var(--black-50);
   --color-black-30: var(--black-30);
@@ -133,7 +136,7 @@
   }
 
   body {
-    background: #141414;
+    background: var(--black02);
     font-family: var(--font-lexend);
     color: var(--foreground);
     overflow: auto;
