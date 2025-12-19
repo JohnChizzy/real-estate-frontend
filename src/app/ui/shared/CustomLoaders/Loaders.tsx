@@ -8,7 +8,7 @@ interface LoadersProps {
 }
 
 const Loader = ({
-  color = "#1D591B",
+  color = "#703BF7",
   size = "xl"
 }: LoadersProps) => {
   

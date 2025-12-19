@@ -13,6 +13,8 @@ export enum ButtonStates {
   pass = 'PASS',
   passOutline = 'PASS_OUTLINE',
   dangerOutline = 'DANGER_OUTLINE',
+  primaryOutline = 'PRIMARY_OUTLINE',
+  royal = 'ROYAL'
 }
 
 export enum ButtonType {
@@ -53,6 +55,8 @@ export default function CustomButton({
     [`${style.pass}`]: !inverted && state === ButtonStates.pass,
     [`${style.passOutline}`]: !inverted && state === ButtonStates.passOutline,
     [`${style.dangerOutline}`]: !inverted && state === ButtonStates.dangerOutline,
+    [`${style.primaryOutline}`]: !inverted && state === ButtonStates.primaryOutline,
+    [`${style.royal}`]: !inverted && state === ButtonStates.royal
   });
 
   if (type === ButtonType.button)

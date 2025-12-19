@@ -31,17 +31,6 @@ const useAuthGuard = () => {
 
   const router = useRouter();
 
-  // useEffect(() => {
-  //   if (isLoggedIn === null && !hasShownToast) {
-  //     router.push("/");
-  //     setHasShownToast(true);
-  //   }
-  //   if (isLoggedIn && window.location.pathname === "/") {
-  //     router.push("/dashboard");
-  //   }
-  // }, [isLoggedIn, router, hasShownToast]);
-
-  // return <>{children}</>;
 
   useEffect(() => {
     if (!isMounted) return;

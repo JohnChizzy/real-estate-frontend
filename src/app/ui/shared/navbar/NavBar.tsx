@@ -19,7 +19,7 @@ export default function NavBar() {
   ];
 
   return (
-    <header className="bg-[#1a1a1a] fixed left-0 top-0 z-10 px-[1.6rem] lg:px-[16.2rem] flex items-center justify-between  py-[2.55rem]  backdrop-blur-sm w-screen">
+    <header className="bg-black03 fixed left-0 top-0 z-12 px-[1.6rem] md:px-[9rem] xl:px-[16.2rem] flex items-center justify-between  py-[2.55rem]  backdrop-blur-sm w-screen">
       <div>
         <Link href="/">
           <Image

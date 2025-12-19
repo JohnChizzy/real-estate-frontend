@@ -128,3 +128,27 @@
   color: var(--red01);
   border: 0.1rem solid var(--red01);
 }
+
+.primaryOutline {
+  color: var(--white);
+  background-color: var(--black02);
+  transition: all 0.3s ease;
+  border: 0.1rem solid var(--grey01);
+}
+
+.primaryOutline:hover {
+  color: var(--black);
+  background-color: var(--grey01);
+  border: 0.1rem solid var(--grey01);
+}
+
+.royal {
+  color: var(--white);
+  background-color: var(--purple);
+  transition: all 0.3s ease;
+}
+
+.royal:hover {
+  color: var(--white);
+  background-color: var(--purple01);
+}

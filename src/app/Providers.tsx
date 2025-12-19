@@ -6,6 +6,7 @@ import { Toaster } from "react-hot-toast";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import {system} from "./theme";
+import Loader from '@/app/ui/shared/CustomLoaders/Loaders';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -38,8 +39,8 @@ export function Providers({
           defaultTheme="light"
         >
           <div className="w-full flex items-center justify-center h-[100vh]">
-            {/* <Loader size="xl" /> */}
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-r-2 border-[#703BF7]"></div>
+            <Loader size="xl" />
+            {/* <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-r-2 border-[#703BF7]"></div> */}
           </div>
         </ThemeProvider>
       </ChakraProvider>

@@ -1,12 +1,23 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
 
+/* 1. Declare layer order */
+/* @layer theme, base, components, utilities; */
+
+/* 2. Import Tailwind styles */
+/* @import "tailwindcss/theme.css" layer(theme); */
+/* @import "tailwindcss/preflight.css" layer(base); */
+
+/* 3. Import utilities WITHOUT a layer */
+/* @import "tailwindcss/utilities.css"; */
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --black: #3e3e3e;
   --black01: #3d3d3d;
   --black02: #141414;
+  --black03: #1a1a1a;
   --black-opaque: rgba(62, 62, 62, 0.3);
   --black-30: rgba(62, 62, 62, 0.3);
   --black-50: rgba(62, 62, 62, 0.5);
@@ -46,6 +57,10 @@
   --grey10: #bfbfbf;
   --grey11: #8b8b8b;
   --grey12: #191919;
+  --grey13: #262626;
+  --grey14: #999999;
+  --purple: #703BF7;
+  --purple01: #9b51e0;
 }
 
 @theme inline {
@@ -59,9 +74,11 @@
   --color-black: var(--black);
   --color-black01: var(--black01);
   --color-black02: var(--black02);
+  --color-black03: var(--black03);
   --color-black-opaque: var(--black-opaque);
   --color-black-50: var(--black-50);
   --color-black-30: var(--black-30);
+  --color-white: var(--white);
   --color-white01: var(--white01);
   --color-yellow: var(--yellow);
   --color-yellow01: var(--yellow01);
@@ -94,6 +111,10 @@
   --color-grey10: var(--grey10);
   --color-grey11: var(--grey11);
   --color-grey12: var(--grey12);
+  --color-grey13: var(--grey13);
+  --color-grey14: var(--grey14);
+  --color-purple: var(--purple);
+  --color-purple01: var(--purple01);
 
   --font-lexend: var(--font-lexend);
   --font-urbanist: var(--font-urbanist);
@@ -654,6 +675,18 @@
 .urb-s-32 {
   font-family: var(--font-urbanist);
   font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.urb-s-46 {
+  font-family: var(--font-urbanist);
+  font-size: 4.6rem;
+  font-weight: 700;
+}
+
+.urb-s-60 {
+  font-family: var(--font-urbanist);
+  font-size: 6rem;
   font-weight: 700;
 }
 
