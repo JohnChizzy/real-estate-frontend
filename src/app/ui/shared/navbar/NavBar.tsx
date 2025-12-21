@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import EstateinLogo from "@/app/assets/images/real-estate-logo.svg";
+import EstateinLogo from "@/public/images/real-estate-logo.svg";
 import { usePathname } from "next/navigation";
 import CustomButton, { ButtonSize, ButtonStates, ButtonType } from "@/app/ui/shared/buttons/Button";
 
