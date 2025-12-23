@@ -51,7 +51,7 @@ const Homepage = () => {
   return (
     <div className="mt-[calc(11rem)]">
       {/* Hero section */}
-      <section className="bg-black03">
+      <section className="bg-black03 max-lg:bg-black02">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="relative max-lg:order-1 pl-[1.6rem] md:pl-[9rem] xl:pl-[16.2rem] py-[14.4rem] pr-[1.6rem] md:pr-[6rem] xl:pr-[8rem] bg-black02">
             <h1 className="urb-s-28 md:text-[4.6rem]! xl:text-[6rem]! font-bold mb-[2.4rem]">
@@ -99,22 +99,23 @@ const Homepage = () => {
               ))}
             </div>
           </div>          
-          {/* TODO: Work on the padding on mobile */}
-          <div className="relative">
+          <div className="max-lg:px-[1.6rem] max-lg:pt-[4rem]">
+            <div className="relative max-lg:rounded-[1.2rem] h-full">
             <Image
               src={Skyscrapper}
-              className="relative z-10 w-full h-full object-cover"
+              className="relative z-10 w-full h-full object-cover max-lg:rounded-[1.2rem]"
               alt="building"
               height={0}
               width={0}
             />
             <Image
               src={WavyLines}
-              className="absolute inset-0 w-full h-full object-cover z-0"
+              className="absolute inset-0 w-full h-full object-cover z-0 max-lg:rounded-[1.2rem]"
               alt="waves"
               height={0}
               width={0}
             />
+          </div>
           </div>
         </div>
         {/* cards */}
