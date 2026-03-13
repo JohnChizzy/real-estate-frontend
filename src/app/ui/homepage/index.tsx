@@ -12,6 +12,7 @@ import PropertyValueIcon from "@/public/images/property-value-icon.svg";
 import PropertyManagementIcon from "@/public/images/property-management-icon.svg";
 import SmartInvestmentIcon from "@/public/images/smart-investment-icon.svg";
 import FeatureArrowIcon from "@/public/images/feature-arrow.svg";
+import NoteIcon from "@/public/images/notes-icon.svg";
 
 const Homepage = () => {
   const metrics = [
@@ -48,10 +49,50 @@ const Homepage = () => {
     },
   ];
 
+  // featured properties
+  const featuredProperties = [
+    {
+      id: 1,
+      title: "Modern Family Home",
+      description: "A spacious 4-bedroom home with a beautiful garden, perfect for families.",
+      price: "$500,000",
+      imageUrl: "/images/seaside.jpg",
+      noOfBedrooms: "4-bedrooms",
+      noOfBathrooms: "3-bathrooms",
+      area: "2,500 sqft",
+      type: "Villa"
+
+    },
+    {
+      id: 2,
+      title: "Luxury Downtown Condo",
+      description: "A luxurious condo in the heart of the city, offering modern amenities and stunning views.",
+      location: "456 Elm St, Metropolis",
+      price: "$750,000",
+      imageUrl: "/images/metropolitan.jpg",
+      noOfBedrooms: "2-bedrooms",
+      noOfBathrooms: "2-bathrooms",
+      area: "1,200 sqft",
+      type: "Villa"
+    },
+    {
+      id: 3,
+      title: "Cozy Suburban Cottage",
+      description: "A charming cottage in a quiet suburban neighborhood, perfect for a peaceful retreat.",
+      location: "789 Oak St, Suburbia",
+      price: "$350,000",
+      imageUrl: "/images/rustic.jpg",
+      noOfBedrooms: "3-bedrooms",
+      noOfBathrooms: "2-bathrooms",
+      area: "1,800 sqft",
+      type: "Villa"
+    },
+  ];
+
   return (
     <div className="mt-[calc(11rem)]">
       {/* Hero section */}
-      <section className="bg-black03 max-lg:bg-black02">
+      <section className="bg-black03 max-lg:bg-black02 pb-[1rem]">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="relative max-lg:order-1 pl-[1.6rem] md:pl-[9rem] xl:pl-[16.2rem] py-[14.4rem] pr-[1.6rem] md:pr-[6rem] xl:pr-[8rem] bg-black02">
             <h1 className="urb-s-28 md:text-[4.6rem]! xl:text-[6rem]! font-bold mb-[2.4rem]">
@@ -143,6 +184,61 @@ const Homepage = () => {
                   width={0}
                   className="absolute top-[2rem] right-[2rem] w-[2.6rem] h-[2.6rem] xl:w-[3.4rem] xl:h-[3.4rem]"
                 />
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      {/* Featured properties */}
+      <section className="px-[1.6rem] md:px-[9rem] xl:px-[16.2rem] py-[9.6rem]">
+        <Image
+          src={NoteIcon}
+          alt="notes"
+          height={0}
+          width={0}
+          className="w-[4.8rem] h-[4.8rem]"
+        />
+        <div>
+          <h2 className="urb-s-24 md:text-[3.2rem]! xl:text-[4rem]! font-bold mb-[3.2rem] md:mb-0">
+            Featured Properties
+          </h2>
+          
+        </div>
+        {/* Placeholder for featured properties listing */}
+        <div className="mt-[4rem] flex flex-col md:flex-row md:justify-between md:items-center">
+          {/* Featured properties would be listed here */}
+          <p className="urb-m-16 text-grey14 md:basis-3/4">
+            Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein. Click "View Details" for more information.
+          </p>
+          <CustomButton
+            type={ButtonType.link}
+            state={ButtonStates.primaryOutline}
+            url="/properties"
+            customStyle="md:w-fit! hidden! md:flex!"
+          >
+            View All Properties
+          </CustomButton>
+        </div>
+        <div className="grid grid-col-1 md:grid-cols-3 md:gap-x-[2rem] xl:gap-x-[3rem] mt-[4rem] md:mt-[6rem] lg:mt-[8rem]">
+          {featuredProperties?.map((property) => (
+            <div key={property.id} className="bg-black02 rounded-[1.2rem] border border-grey13 p-[2.4rem] md:p-[3rem] xl:p-[4rem]">
+              <Image
+                src={property.imageUrl}
+                alt={property.title}
+                height={0}
+                width={0}
+                className="w-full h-[21rem] lg:h-[25.5rem] xl:h-[31.8rem] rounded-[1rem] object-cover"
+                unoptimized
+              />
+              <div className="mt-[1.6rem] md:mt-[2rem] xl:mt-[3rem]">
+                <h3 className="urb-s-18 md:text-[2rem]! xl:text-[2.4rem]! font-bold mb-[0.2rem] md:mb-[0.4rem] xl:mb-[0.6rem]">{property.title}</h3>
+                <p className="urb-m-14 md:text-[1.6rem]! xl:text-[1.8rem]! text-grey14 mb-[1.2rem]">{property.description}</p>
+                <p className="urb-b-16 font-bold mb-[1.2rem]">{property.price}</p>
+                <div className="flex items-center gap-x-[1.2rem]">
+                  <p className="urb-m-14 text-grey14">{property.noOfBedrooms}</p>
+                  <p className="urb-m-14 text-grey14">{property.noOfBathrooms}</p>
+                  <p className="urb-m-14 text-grey14">{property.area}</p>
+                </div>
               </div>
             </div>
           ))}
