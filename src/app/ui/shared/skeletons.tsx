@@ -82,6 +82,27 @@ export function LatestInvoicesSkeleton() {
   );
 }
 
+export function PropertyCardSkeleton() {
+  return (
+    <div className={`${shimmer} relative overflow-hidden bg-black02 rounded-[1.2rem] border border-grey13 p-[2.4rem] md:p-[3rem] xl:p-[4rem] flex flex-col h-full`}>
+      <div className="w-full h-[21rem] lg:h-[25.5rem] xl:h-[31.8rem] rounded-[1rem] bg-grey13" />
+      <div className="mt-[1.6rem] md:mt-[2rem] xl:mt-[3rem] flex flex-col flex-grow">
+        <div className="h-8 w-3/4 rounded-md bg-grey13 mb-[0.6rem]" />
+        <div className="h-16 w-full rounded-md bg-grey13 mb-[3rem]" />
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-[3rem] mt-auto">
+          <div className="h-10 rounded-full bg-grey13" />
+          <div className="h-10 rounded-full bg-grey13" />
+          <div className="h-10 rounded-full bg-grey13 max-lg:col-span-2" />
+        </div>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="h-12 w-24 rounded-md bg-grey13" />
+          <div className="h-12 w-full sm:w-32 rounded-md bg-grey13" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function DashboardSkeleton() {
   return (
     <>
