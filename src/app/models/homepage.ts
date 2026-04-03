@@ -8,3 +8,9 @@ export interface TestimonialInterface {
   location: string;
   imageUrl: string;
 }
+
+export interface FaqInterface {
+  id: number | string;
+  question: string;
+  content: string;
+}
