@@ -174,8 +174,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        {/* links */}
-        <div className="md:col-span-7 grid grid-rows-[1fr] content-start grid-cols-2 sm:grid-cols-3 lg:grid-cols-[max-content_max-content_max-content_max-content_max-content] gap-x-[8rem] 3xl:gap-x-[9rem] gap-y-10">
+        {/* links TODO:grid-rows-[1fr] content-start*/}
+        <div className="md:col-span-7 grid grid-cols-[1fr_max-content] grid-rows-[1fr] content-start sm:grid-cols-3 lg:grid-cols-[max-content_max-content_max-content_max-content_max-content] gap-x-[8rem] 3xl:gap-x-[9rem] gap-y-10">
           {footerLinks.map((column, index) => (
             <div
               className="border-b border-grey13 pb-8 md:border-b-0 md:pb-0 h-fit"
@@ -183,9 +183,6 @@ const Footer = () => {
             >
               <div
                 className={clsx(
-                  // Mobile: full-height column with bottom border
-                  // "border-b border-grey13 pb-8 md:border-b-0 md:pb-0",
-
                   // Mobile: vertical divider only on the right column of each row
                   index % 2 === 1 &&
                     "border-l border-grey13 pl-8 md:border-l-0 md:pl-0",
