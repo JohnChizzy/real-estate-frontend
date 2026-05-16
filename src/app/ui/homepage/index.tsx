@@ -21,10 +21,20 @@ import { PropertyCardSkeleton } from "@/app/ui/shared/skeletons";
 import { Property } from "@/app/models/property";
 import TestimonialCard from "@/app/ui/shared/cards/TestimonialCard";
 import FaqCard from "@/app/ui/shared/cards/FaqCard";
+import Footer from "@/app/ui/shared/Footer/Footer";
 
 const Homepage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false); // Can be toggled for testing
+  const [email, setEmail] = useState("");
+
+  const storeEmail = (value: string) => {
+    setEmail(value);
+  };
+
+  const handleKeyDown = (event: { key: string }) => {
+    if (event.key === "Enter") storeEmail(email);
+  };
 
   const metrics = [
     {
@@ -96,7 +106,6 @@ const Homepage = () => {
     },
   ];
 
-
   // featured properties
   const featuredProperties: Property[] = [
     {
@@ -146,7 +155,8 @@ const Homepage = () => {
     },
     {
       id: 2,
-      question: "What documents do I need to sell my property through Estatein?",
+      question:
+        "What documents do I need to sell my property through Estatein?",
       content:
         "Find out about the necessary documentation for listing your property with us.",
     },
@@ -271,11 +281,11 @@ const Homepage = () => {
           width={0}
           className="w-[4.8rem] h-[4.8rem]"
         />
-          <h2 className="urb-s-24 md:text-[3.2rem]! 3xl:text-[4rem]! font-bold mb-[3.2rem] md:mb-0">
-            Featured Properties
-          </h2>
+        <h2 className="urb-s-24 md:text-[3.2rem]! 3xl:text-[4rem]! font-bold mb-[3.2rem] md:mb-0">
+          Featured Properties
+        </h2>
         {/* Placeholder for featured properties listing */}
-        <div className="mt-[4rem] flex flex-col md:flex-row md:justify-between md:items-center">
+        <div className="mt-[0.6rem] md:mt-[1rem] 3xl:mt-[1.4rem] flex flex-col md:flex-row md:justify-between md:items-center">
           {/* Featured properties would be listed here */}
           <p className="urb-m-14 lg:text-[1.6rem]! 3xl:text-[1.8rem]! text-grey14 md:basis-3/4">
             Explore our handpicked selection of featured properties. Each
@@ -319,13 +329,15 @@ const Homepage = () => {
           width={0}
           className="w-[4.8rem] h-[4.8rem]"
         />
-          <h2 className="urb-s-24 md:text-[3.2rem]! 3xl:text-[4rem]! font-bold mb-[3.2rem] md:mb-0">
-            What Our Clients Say
-          </h2>
-        <div className="mt-[4rem] flex flex-col md:flex-row md:justify-between md:items-center">
+        <h2 className="urb-s-24 md:text-[3.2rem]! 3xl:text-[4rem]! font-bold mb-[3.2rem] md:mb-0">
+          What Our Clients Say
+        </h2>
+        <div className="mt-[0.6rem] md:mt-[1rem] 3xl:mt-[1.4rem] flex flex-col md:flex-row md:justify-between md:items-center">
           {/* Testimonials would be listed here */}
           <p className="urb-m-14 lg:text-[1.6rem]! 3xl:text-[1.8rem]! text-grey14 md:basis-3/4">
-            Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs.
+            Read the success stories and heartfelt testimonials from our valued
+            clients. Discover why they chose Estatein for their real estate
+            needs.
           </p>
           <CustomButton
             type={ButtonType.link}
@@ -342,7 +354,10 @@ const Homepage = () => {
                 <PropertyCardSkeleton key={index} />
               ))
             : testimonials?.map((testimonial) => (
-                <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+                <TestimonialCard
+                  key={testimonial.id}
+                  testimonial={testimonial}
+                />
               ))}
         </div>
         <div className="mt-[3rem] md:mt-[4rem] 3xl:mt-[5rem]">
@@ -363,12 +378,14 @@ const Homepage = () => {
           width={0}
           className="w-[4.8rem] h-[4.8rem]"
         />
-          <h2 className="urb-s-24 md:text-[3.2rem]! 3xl:text-[4rem]! font-bold mb-[3.2rem] md:mb-0">
-            Frequently Asked Questions
-          </h2>
-        <div className="mt-[4rem] flex flex-col md:flex-row md:justify-between md:items-center">
+        <h2 className="urb-s-24 md:text-[3.2rem]! 3xl:text-[4rem]! font-bold">
+          Frequently Asked Questions
+        </h2>
+        <div className="mt-[0.6rem] md:mt-[1rem] 3xl:mt-[1.4rem] flex flex-col md:flex-row md:justify-between md:items-center">
           <p className="urb-m-14 lg:text-[1.6rem]! 3xl:text-[1.8rem]! text-grey14 md:basis-3/4">
-              Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way.
+            Find answers to common questions about Estatein's services, property
+            listings, and the real estate process. We're here to provide clarity
+            and assist you every step of the way.
           </p>
           <CustomButton
             type={ButtonType.link}
@@ -384,9 +401,7 @@ const Homepage = () => {
             ? Array.from({ length: 3 }).map((_, index) => (
                 <PropertyCardSkeleton key={index} />
               ))
-            : faqs?.map((faq) => (
-                <FaqCard key={faq.id} question={faq} />
-              ))}
+            : faqs?.map((faq) => <FaqCard key={faq.id} question={faq} />)}
         </div>
         <div className="mt-[3rem] md:mt-[4rem] 3xl:mt-[5rem]">
           <hr className="border-t border-t-grey13 mb-[1.6rem] 3xl:mb-[2rem]" />
@@ -397,6 +412,8 @@ const Homepage = () => {
           />
         </div>
       </section>
+      {/* Footer */}
+      <Footer/>
     </div>
   );
 };

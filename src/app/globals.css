@@ -779,3 +779,26 @@ input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+/* .css-ee9xfg:is(:focus-visible, [data-focus-visible]) {
+    outline-width: var(--focus-ring-width, 1px);
+    outline-color: var(--focus-ring-color);
+    outline-style: var(--focus-ring-style, solid);
+    border-color: var(--focus-ring-color);
+} */
+
+
+
+/* :is([type="text"], input:where(:not([type])), [type="email"], [type="url"], [type="password"], [type="number"], [type="date"], [type="datetime-local"], [type="month"], [type="search"], [type="tel"], [type="time"], [type="week"], [multiple], textarea, select):focus {
+    outline-offset: 2px;
+    --tw-ring-inset: var(--tw-empty, );
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: #155dfc;
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    border-color: #155dfc;
+    border-color: lab(44.0605% 29.0279 -86.0352);
+    outline: 2px solid #0000;
+} */
