@@ -12,8 +12,8 @@
 /* @import "tailwindcss/utilities.css"; */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
   --black: #3e3e3e;
   --black01: #3d3d3d;
   --black02: #141414;
@@ -61,6 +61,7 @@
   --grey14: #999999;
   --purple: #703BF7;
   --purple01: #9b51e0;
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -127,18 +128,12 @@
   --breakpoint-ml: 1180px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 @layer base {
   html {
     font-size: 10px;
     font-weight: normal;
     scroll-behavior: smooth;
+    color-scheme: dark;
   }
 
   *,

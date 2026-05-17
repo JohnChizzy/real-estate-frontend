@@ -173,12 +173,12 @@ const Homepage = () => {
   }
 
   return (
-    <div className="mt-[calc(11rem)]">
+    <div className="mt-[calc(8.6rem)] md:mt-[calc(11rem)]">
       {/* Hero section */}
       <section className="bg-black03 max-lg:bg-black02 pb-[1rem]">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="relative max-lg:order-1 pl-[1.6rem] md:pl-[9rem] 3xl:pl-[16.2rem] py-[14.4rem] pr-[1.6rem] md:pr-[6rem] 3xl:pr-[8rem] bg-black02">
-            <h1 className="urb-s-28 md:text-[4.6rem]! 3xl:text-[6rem]! font-bold mb-[2.4rem]">
+            <h1 className="urb-s-28 md:text-[4.6rem]! 3xl:text-[6rem]! mb-[2.4rem]">
               Discover Your Dream <br /> Property with Estatein
             </h1>
             <p className="urb-m-14 md:text-[1.6rem]! 3xl:text-[1.8rem]! text-[#999999]">
