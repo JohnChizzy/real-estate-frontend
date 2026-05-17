@@ -36,7 +36,7 @@ export function Providers({
         <ThemeProvider
           attribute="class"
           disableTransitionOnChange
-          defaultTheme="light"
+          defaultTheme="dark"
         >
           <div className="w-full flex items-center justify-center h-[100vh]">
             <Loader size="xl" />
@@ -57,7 +57,7 @@ export function Providers({
         <ThemeProvider
           attribute="class"
           disableTransitionOnChange
-          defaultTheme="light"
+          defaultTheme="dark"
         >
           {children}
         </ThemeProvider>
