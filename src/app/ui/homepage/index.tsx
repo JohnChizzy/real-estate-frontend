@@ -210,7 +210,7 @@ const Homepage = () => {
                 Browse Properties
               </CustomButton>
             </div>
-            <div className="mt-[6rem] grid grid-cols-2 md:grid-cols-3 gap-x-[1.2rem] lg:gap-x-[1.6rem] 3xl:gap-x-[2rem] gap-y-[1.2rem]  lg:gap-y-[1.6rem] 3xl:gap-y-[2rem]">
+            <div className="mt-[6rem] grid grid-cols-2 md:grid-cols-3 gap-x-[1.2rem] lg:gap-x-[1.6rem] 3xl:gap-x-[2rem] gap-y-[1.2rem] lg:gap-y-[1.6rem] 3xl:gap-y-[2rem]">
               {metrics.map((metric) => (
                 <ListItem
                   key={metric.title}
@@ -243,7 +243,7 @@ const Homepage = () => {
           </div>
         </div>
         {/* cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 bg-black02 px-[1rem] gap-x-[1rem] 3xl:gap-x-[2rem] gap-y-[1rem] 3xl:gap-y-[2rem] py-[1rem] 3xl:py-[2rem] 3xl:px-[2rem] mt-[1rem]">
+        <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-fr max-lg:mx-[1.6rem] max-lg:outline-black03 max-lg:outline-[0.4rem] bg-black02 px-[1rem] gap-x-[1rem] 3xl:gap-x-[2rem] gap-y-[1rem] 3xl:gap-y-[2rem] py-[1rem] 3xl:py-[2rem] 3xl:px-[2rem] mt-[1rem] max-lg:rounded-[1.2rem]">
           {featuresHighlights.map((feature) => (
             <div
               key={feature.title}
